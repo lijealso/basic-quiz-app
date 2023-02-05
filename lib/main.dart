@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
   void _resetQuiz() {
     setState(() {
       _questionIndex = 0;
-      _totalSore = 0;
+      _totalScore = 0;
     });
   }
 
@@ -88,6 +88,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+        home: Scaffold(
+      appBar: AppBar(
+        title: const Text('Quiz App'),
+        backgroundColor: Colors.white12,
+      ),
+    ));
   }
 }
