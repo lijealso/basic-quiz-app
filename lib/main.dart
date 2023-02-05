@@ -63,6 +63,13 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   var _totalSore = 0;
 
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalSore = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp();
