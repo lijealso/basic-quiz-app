@@ -89,11 +89,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Quiz App'),
-        backgroundColor: Colors.white12,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Quiz App'),
+          backgroundColor: Colors.white12,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: _questionIndex < _questions.length
+              ? Quiz(
+                  answerQuestions: _answerQuestion,
+                  questionsIndex: _questionIndex,
+                  questions: _questions,
+                )
+              : Result(_totalScore, _resetQuiz),
+        ),
       ),
-    ));
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
