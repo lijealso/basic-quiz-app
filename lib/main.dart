@@ -30,7 +30,11 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Android Development Kit', 'score': -2},
         {'text': 'IOS Development Kit', 'score': -2},
         {'text': 'Web Development Kit', 'score': -2},
-        {'text': 'SDK to build beautiful IOS, Android, Web & Desktop Native Apps', 'score': 10},
+        {
+          'text':
+              'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
+          'score': 10
+        },
       ],
     },
     {
@@ -52,7 +56,8 @@ class _MyAppState extends State<MyApp> {
       ],
     },
     {
-      'questionText': 'Q5. Is Flutter for Web and Desktop available in stable version?',
+      'questionText':
+          'Q5. Is Flutter for Web and Desktop available in stable version?',
       'answers': [
         {
           'text': 'Yes',
@@ -62,6 +67,7 @@ class _MyAppState extends State<MyApp> {
       ],
     },
   ];
+
   var _questionIndex = 0;
   var _totalScore = 0;
 
@@ -73,18 +79,19 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _answerQuestion(int score) {
-    _totalScore = _totalScore + score;
+    _totalScore += score;
 
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-
+    // ignore: avoid_print
     print(_questionIndex);
-
     if (_questionIndex < _questions.length) {
-      print('Existem mais questões');
+      // ignore: avoid_print
+      print('We have more questions!');
     } else {
-      print('Não existem mais questões');
+      // ignore: avoid_print
+      print('No more questions!');
     }
   }
 
@@ -93,15 +100,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Quiz App'),
-          backgroundColor: Colors.white12,
+          title: const Text('Geeks for Geeks'),
+          backgroundColor: const Color(0xFF00E676),
         ),
         body: Padding(
           padding: const EdgeInsets.all(30.0),
           child: _questionIndex < _questions.length
               ? Quiz(
-                  answerQuestions: _answerQuestion,
-                  questionsIndex: _questionIndex,
+                  answerQuestion: _answerQuestion,
+                  questionIndex: _questionIndex,
                   questions: _questions,
                 )
               : Result(_totalScore, _resetQuiz),
