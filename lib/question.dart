@@ -13,7 +13,8 @@ class Question extends StatelessWidget {
       child: Text(
         questionText,
         style: const TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,
       ),
-    );
+    ); 
   }
 }

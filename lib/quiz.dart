@@ -28,6 +28,6 @@ class Quiz extends StatelessWidget {
               () => answerQuestion(answer['score']), answer['text'].toString());
         }).toList()
       ],
-    );
+    ); //Column
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './quiz.dart';
 import './result.dart';
 
@@ -84,15 +85,6 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-    // ignore: avoid_print
-    print(_questionIndex);
-    if (_questionIndex < _questions.length) {
-      // ignore: avoid_print
-      print('We have more questions!');
-    } else {
-      // ignore: avoid_print
-      print('No more questions!');
-    }
   }
 
   @override
